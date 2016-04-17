@@ -14,10 +14,26 @@
 	<!-- command + slash -->
 	<!-- this tells app.js & index.html that they're linked <3 -->
 	<body ng-app="toDoApp">
-		<div ng-controller="ToDoListCtrl">My ToDo List is Called:
-			<h1>{{toDoListName}}</h2>		
-			<input ng-model="myInputText"type="text"/>
-			{{myInputText}}
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-12">
+					<div ng-controller="ToDoListCtrl">
+						<h1>{{toDoListName}}</h2>		
+						<input ng-model="myInputText"type="text"/>
+						{{myInputText}}
+						<div class="row">
+							<div class="col-xs-4 col-xs-offset-4">
+								<div ng-repeat="toDoItem in toDo">
+									<input type="checkbox" ng-model="toDoItem.completed" />
+
+								<span>{{toDoItem.text}}</span>
+
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
 		</div>
 	</body>
 

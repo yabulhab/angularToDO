@@ -10,7 +10,9 @@ toDoApp.controller("ToDoListCtrl", function($scope) {
 	$scope.myInputText= "";
 	$scope.toDo = [
 		{text:"fold laundry", completed:false}, 
-		{text:"forage for meals", completed:false}
+		{text:"forage for meals", completed:false},
+		{text:"whine", completed:true},
+		{text:"uuuuugh", completed:false}
 	];
 
 
