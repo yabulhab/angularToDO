@@ -18,11 +18,16 @@
 			<div class="row">
 				<div class="col-xs-12">
 					<div ng-controller="ToDoListCtrl">
-						<h1>{{toDoListName}}</h2>		
-						<input ng-model="myInputText"type="text"/>
-						{{myInputText}}
+						<h1>{{toDoListName}}</h1>	
+							<!-- this line is the input. ng-model binds the myInputText variable to the ToDoListCtrl ng-controller above -->
+						<input ng-model="myInputText" type="text"/>
+						
+						<!--  this duplicates what i put in to the variable in real time: {{myInputText}} -->
+						<button ng-click="submitItem()">submit</button>
+						<div ng-show="errorMsg">YOU ARE WRONG</div>
 						<div class="row">
 							<div class="col-xs-4 col-xs-offset-4">
+								<!-- ng-repeat is an iterator. for each item (let's call it toDoItem) in the toDo array, the prexisting array already in the controller, do the following. in this one, the input and the span  -->
 								<div ng-repeat="toDoItem in toDo">
 									<input type="checkbox" ng-model="toDoItem.completed" />
 

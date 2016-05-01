@@ -14,7 +14,19 @@ toDoApp.controller("ToDoListCtrl", function($scope) {
 		{text:"whine", completed:true},
 		{text:"uuuuugh", completed:false}
 	];
+	$scope.errorMsg = false;
+	$scope.submitItem = function(){
+		console.log("myInputText ", $scope.myInputText)
+		if ($scope.myInputText === "") {
+			$scope.errorMsg = true;
+		} else {
+			var newObject = {text: $scope.myInputText, completed:false};
+			$scope.toDo.push(newObject);		
+			$scope.myInputText = "";
+			$scope.errorMsg = false;
+		};
 
+	};
 
 
 });
