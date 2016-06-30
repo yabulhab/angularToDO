@@ -2,6 +2,7 @@
 //initiates the angular app
 var toDoApp = angular.module('toDoApp', []);
 
+
 console.log("I'm working!");
 
 toDoApp.controller("ToDoListCtrl", function($scope) {
@@ -27,6 +28,17 @@ toDoApp.controller("ToDoListCtrl", function($scope) {
 		};
 
 	};
+	$scope.addToDone = function(item){
+			//add to done list
+			if (item.completed) {
+				$scope.done.push(item);
+				
 
+			}
+			
+			//delete from the toDo list
+			
+	};
+	$scope.done = [];
 
 });

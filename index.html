@@ -28,10 +28,16 @@
 						<div class="row">
 							<div class="col-xs-4 col-xs-offset-4">
 								<!-- ng-repeat is an iterator. for each item (let's call it toDoItem) in the toDo array, the prexisting array already in the controller, do the following. in this one, the input and the span  -->
-								<div ng-repeat="toDoItem in toDo">
-									<input type="checkbox" ng-model="toDoItem.completed" />
+								<div ng-repeat="toDoItem in toDo track by $index">
+									<input type="checkbox" ng-model="toDoItem.completed" ng-change="addToDone(toDoItem)" />
 
 								<span>{{toDoItem.text}}</span>
+								</div>
+								<hr>
+								<h1>DONE</h1>
+								<div ng-repeat="thing in done track by $index">
+									<input type="checkbox" ng-model="thing.completed"/>
+									<span>{{thing.text}}</span>
 
 								</div>
 							</div>
